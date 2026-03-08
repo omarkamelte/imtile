@@ -49,9 +49,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/omarmkamel/imtile"
-Repository = "https://github.com/omarmkamel/imtile"
-Issues = "https://github.com/omarmkamel/imtile/issues"
+Homepage = "https://github.com/omarkamelte/imtile"
+Repository = "https://github.com/omarkamelte/imtile"
+Issues = "https://github.com/omarkamelte/imtile/issues"
 
 [tool.setuptools.packages.find]
 include = ["imtile*"]
