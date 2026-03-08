@@ -3,7 +3,7 @@
 **Lightweight image tiling and reconstruction for computer vision & deep learning.**
 
 [![PyPI version](https://img.shields.io/pypi/v/imtile)](https://pypi.org/project/imtile/)
-[![Downloads](https://static.pepy.tech/badge/imtile/month)](https://pepy.tech/projects/imtile)
+[![Downloads](https://img.shields.io/pypi/dm/imtile)](https://pypi.org/project/imtile/)
 [![Python](https://img.shields.io/pypi/pyversions/imtile)](https://pypi.org/project/imtile/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![CI](https://github.com/omarkamelte/imtile/actions/workflows/ci.yml/badge.svg)](https://github.com/omarkamelte/imtile/actions)
