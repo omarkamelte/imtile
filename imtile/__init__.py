@@ -13,7 +13,7 @@ Quick start::
     reconstructed = tiler.reconstruct(tiles, large_image.shape)
 """
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 from .tiler import ImageTiler, reconstruct_image, tile_image  # noqa: F401
 from .backend import gpu_available  # noqa: F401
