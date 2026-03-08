@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "imtile"
-version = "0.1.0"
+version = "0.1.1"
 description = "Lightweight image tiling and reconstruction for computer vision and deep learning pipelines."
 readme = "README.md"
 license = {text = "MIT"}

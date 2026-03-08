@@ -3,9 +3,10 @@
 **Lightweight image tiling and reconstruction for computer vision & deep learning.**
 
 [![PyPI version](https://img.shields.io/pypi/v/imtile)](https://pypi.org/project/imtile/)
+[![Downloads](https://static.pepy.tech/badge/imtile/month)](https://pepy.tech/projects/imtile)
 [![Python](https://img.shields.io/pypi/pyversions/imtile)](https://pypi.org/project/imtile/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![CI](https://github.com/omarmkamel/imtile/actions/workflows/ci.yml/badge.svg)](https://github.com/omarmkamel/imtile/actions)
+[![CI](https://github.com/omarkamelte/imtile/actions/workflows/ci.yml/badge.svg)](https://github.com/omarkamelte/imtile/actions)
 
 Split large images into fixed-size overlapping tiles for neural network inference, then reassemble them with **weighted-average blending** for seamless, lossless reconstruction.
 
@@ -17,7 +18,6 @@ Split large images into fixed-size overlapping tiles for neural network inferenc
 - ✅ **GPU acceleration** — auto-detects CuPy for transparent GPU processing
 - ✅ **Framework agnostic** — works with plain NumPy arrays (no PyTorch/TF dependency)
 - ✅ **Grayscale & multi-channel** — supports 2-D and 3-D arrays
-- ✅ **Tile position API** — get `(y, x, y_end, x_end)` coordinates for mapping predictions back
 
 ## Installation
 
@@ -64,14 +64,6 @@ tiles = tile_image(image, tile_size=256, overlap=32)
 result = reconstruct_image(tiles, image.shape, tile_size=256, overlap=32)
 ```
 
-### Get Tile Positions
-
-```python
-positions = tiler.get_tile_positions(image.shape)
-for y_start, x_start, y_end, x_end in positions:
-    print(f"Tile at [{y_start}:{y_end}, {x_start}:{x_end}]")
-```
-
 ## Algorithm
 
 ```
@@ -107,7 +99,6 @@ Reconstruction: canvas += tile; weights += 1
 |---|---|
 | `tile(image)` | Split image into tiles. Returns `List[ndarray]`. |
 | `reconstruct(tiles, original_shape)` | Reassemble tiles with weighted averaging. |
-| `get_tile_positions(image_shape)` | Get `(y, x, y_end, x_end)` for each tile. |
 
 ### Module Functions
 
@@ -130,4 +121,4 @@ Reconstruction: canvas += tile; weights += 1
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or pull request on [GitHub](https://github.com/omarmkamel/imtile).
+Contributions are welcome! Please open an issue or pull request on [GitHub](https://github.com/omarkamelte/imtile). See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.

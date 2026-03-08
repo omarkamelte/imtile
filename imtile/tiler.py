@@ -76,7 +76,7 @@ class ImageTiler:
     # Public API
     # ------------------------------------------------------------------
 
-    def get_tile_positions(
+    def _get_tile_positions(
         self, image_shape: Tuple[int, ...]
     ) -> List[Tuple[int, int, int, int]]:
         """Compute ``(y_start, x_start, y_end, x_end)`` for every tile.
@@ -149,7 +149,7 @@ class ImageTiler:
 
         xp = get_array_module(image)
         is_2d = image.ndim == 2
-        positions = self.get_tile_positions(image.shape)
+        positions = self._get_tile_positions(image.shape)
 
         tiles: List[np.ndarray] = []
         for sy, sx, ey, ex in positions:
@@ -218,7 +218,7 @@ class ImageTiler:
 
         is_2d = len(original_shape) == 2
         height, width = original_shape[0], original_shape[1]
-        positions = self.get_tile_positions(original_shape)
+        positions = self._get_tile_positions(original_shape)
 
         weights = np.zeros((height, width), dtype=np.float64)
         out_dtype = tiles_clean[0].dtype if tiles_clean else np.uint8

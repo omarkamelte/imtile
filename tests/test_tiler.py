@@ -274,7 +274,7 @@ class TestTileCount:
 class TestTilePositions:
     def test_positions_match_tiles(self, rgb_97x103):
         tiler = ImageTiler(tile_size=32, overlap=8)
-        positions = tiler.get_tile_positions(rgb_97x103.shape)
+        positions = tiler._get_tile_positions(rgb_97x103.shape)
         tiles = tiler.tile(rgb_97x103)
         assert len(positions) == len(tiles)
         for (sy, sx, ey, ex), tile in zip(positions, tiles):
@@ -285,7 +285,7 @@ class TestTilePositions:
     def test_positions_cover_image(self, rgb_100):
         """Every pixel must be covered by at least one tile."""
         tiler = ImageTiler(tile_size=32, overlap=8)
-        positions = tiler.get_tile_positions(rgb_100.shape)
+        positions = tiler._get_tile_positions(rgb_100.shape)
         coverage = np.zeros(rgb_100.shape[:2], dtype=int)
         for sy, sx, ey, ex in positions:
             coverage[sy:ey, sx:ex] += 1
@@ -294,7 +294,7 @@ class TestTilePositions:
     def test_positions_cover_non_square(self, gray_1243x530):
         """Every pixel of the 1243×530 image must be covered."""
         tiler = ImageTiler(tile_size=64, overlap=16)
-        positions = tiler.get_tile_positions(gray_1243x530.shape)
+        positions = tiler._get_tile_positions(gray_1243x530.shape)
         coverage = np.zeros(gray_1243x530.shape[:2], dtype=int)
         for sy, sx, ey, ex in positions:
             coverage[sy:ey, sx:ex] += 1
