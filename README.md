@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/logo.jpg" alt="imtile logo" width="300">
+</p>
+
 # imtile
 
 **Lightweight image tiling and reconstruction for computer vision & deep learning.**
